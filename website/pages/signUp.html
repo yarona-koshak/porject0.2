@@ -2,17 +2,48 @@
 <html>
 
 <head>
-  <title>Sign-up Page</title>
+  <title>Login Page :)</title>
+  <style>
+    #container{
+    display: flex;
+    justify-content: center;    
+}
+#signUph{
+    display: flex;
+    justify-content: center;    
+}
+#signUpbutton{
+    display: flex;
+    justify-content: center;    
+}
+#text{
+    display: flex;
+    justify-content: center;    
+}
+
+  </style>
 </head>
 
 <body>
-<h1>SIGN UP</h1>
-username: <input id="usernameInp">
-<br>
-password: <input id="passwordInp">
-<br>
-<button id="signupBut">Sign-up</button>
-  <script type="module" src="signUp.js"></script>
+<h1 id="signUph">Sign Up</h1>
+      <h2 id="text">To Start The Game You Need Sign Up :</h2>
+<div id="container">
+    <div id="flex">
+<table>
+    <tr> 
+        <td>username:</td>
+       <td> <input id="usernameInp"></td>
+        </tr>
+    <tr>
+        <td>password:</td>
+        <td> <input id="passwordInp"></td>
+    </tr> 
+</table>
+    </div> 
+    <button id="signupbutton">Sign Up</button>
+</div>
+
+  <script type="module" src="signUp.ts"></script>
 </body>
 
 </html>
