@@ -1,6 +1,6 @@
 import { send } from "../utilities";
 
-let userNameInput = document.querySelector("#usernameInput")! as HTMLInputElement;
+let userNameInput = document.querySelector("#userNameInput")! as HTMLInputElement;
 let passwordInput = document.querySelector("#passwordInput")! as HTMLInputElement;
 let buttonLogin = document.querySelector("#buttonLogin")! as HTMLButtonElement;
 buttonLogin.onclick = async function () {
