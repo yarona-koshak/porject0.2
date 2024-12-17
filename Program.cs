@@ -7,7 +7,6 @@ class Program
   static void Main()
   {
     int port = 5000;
-    int num = 0;
     string[] userNamesArr=[];
     string[] passwordArr=[];
     string[] ids=[];
@@ -36,15 +35,8 @@ class Program
       {
         try
         {
-          
-          
-          if (request.Path == "message")
-          {
-            
-            string text = request.GetBody<string>();
-            Console.WriteLine("Recieved '" + text + "' from the clint!");
-          }
-          else if (request.Path=="signUp"){
+        
+         if (request.Path=="signUp"){
             (string userName, string password) = request.GetBody<(string,string)>();
             userNamesArr=[..userNamesArr,userName];
             passwordArr=[..passwordArr,password];
@@ -78,6 +70,7 @@ class Program
         {
           Log.WriteException(exception);
         }
+      
       }
       response.Close();
     }
