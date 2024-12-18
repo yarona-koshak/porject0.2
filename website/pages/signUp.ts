@@ -1,9 +1,19 @@
-import { send } from "../utilities";
 
 let userNameInput= document.querySelector("#userNameInput")! as HTMLInputElement;
 let passwordInput= document.querySelector("#passwordInput")! as HTMLInputElement;
-let buttonSignUp = document.querySelector("#buttonSignUp")! as HTMLButtonElement;
+let signupbutton = document.querySelector("#signupbutton")! as HTMLButtonElement;
 
-buttonSignUp.onclick=function(){
-    send("signUp", [userNameInput.value, passwordInput.value]);
+signupbutton.onclick=function(){
+    let username=userNameInput.value;
+    let password=passwordInput.value;
+
+if(!username||!password){
+ alert("we need your user name and password");
+ return;
+}
+let users=JSON.parse(localStorage.getItem("users")||"[]");
+
+
+    window.location.href ="/website/pages/index.html";
+
 }
