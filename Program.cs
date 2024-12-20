@@ -7,9 +7,7 @@ class Program
   static void Main()
   {
     int port = 5000;
-    string[] userNamesArr=[];
-    string[] passwordArr=[];
-    string[] ids=[];
+    User[] users = [];
     var server = new Server(port);
 
     Console.WriteLine("The server is running");
@@ -35,44 +33,63 @@ class Program
       {
         try
         {
-        
-         if (request.Path=="signUp"){
-            (string userName, string password) = request.GetBody<(string,string)>();
-            userNamesArr=[..userNamesArr,userName];
-            passwordArr=[..passwordArr,password];
-            ids=[..ids,Guid.NewGuid().ToString()];
-            Console.WriteLine(userName+" ,"+ password);
 
+          if (request.Path == "signUp")
+          {
+            (string userName, string password) = request.GetBody<(string, string)>();
+            string userId = Guid.NewGuid().ToString();
+            users = [.. users, new User(userName, password,userId)];
+            
+            Console.WriteLine(userName + " ," + password);
+            response.Send(userId);
           }
-          else if (request.Path=="login"){
-            (string userName, string password) = request.GetBody<(string,string)>();
-            bool foundUser= false;
-            string userId= "";
-            for (int i =0; i<userNamesArr.Length;i++){
-            if(userName == userNamesArr[i]){
-              foundUser= true;
-              userId=ids[i];
+          else if (request.Path == "login")
+          {
+            (string userName, string password) = request.GetBody<(string, string)>();
+            string? userId = null;
+            for (int i = 0; i < users.Length; i++)
+            {
+              if (userName == users[i].userName && password == users[i].password)
+              {
+                userId = users[i].id;
+              }
             }
-            }
-            response.Send((foundUser,userId));
+            response.Send(userId);
           }
-          else if (request.Path=="getUserName"){
-            string userId=request.GetBody<string>();
-            int i=0;
-            while ( ids[i]!=userId){
+          else if (request.Path == "getUserName")
+          {
+            string userId = request.GetBody<string>();
+            int i = 0;
+            while (users[i].id != userId)
+            {
               i++;
             }
-            string userName =userNamesArr[i];
+            string userName = users[i].userName;
             response.Send(userName);
-        }
+          }
         }
         catch (Exception exception)
         {
           Log.WriteException(exception);
         }
-      
+
       }
       response.Close();
     }
+  }
+}
+class User
+{
+  public string userName;
+
+  public string password;
+  public string id;
+  public User(string userName, string password, string id)
+  {
+    this.userName = userName;
+    this.password = password;
+    this.id = id;
+
+
   }
 }

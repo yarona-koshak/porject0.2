@@ -12,6 +12,9 @@
     display: flex;
     justify-content: center;    
 }
+.td{
+    color: aliceblue;    
+}
 #loginbutton{
     display: flex;
     justify-content: center;    
@@ -20,32 +23,28 @@
     display: flex;
     justify-content: center;    
 }
-/* #catpictoLogin{ */
-    /* display: flex;   
-    height: 500px;
-    align-items: center;
-    justify-content: center;  */
+
    body{
     background-image: url('https://i.pinimg.com/736x/d2/ba/b8/d2bab8d03a34e0bb1adb7bee05cc9c94.jpg');
     background-size: cover;
     
    }
-/* } */
+
   </style>
 </head>
 
 <body>
-<h1 id="loginh">LOGIN</h1>
-      <h2 id="text">To Start The Game You Need To Login :</h2>
+<h1 id="loginh" class="td">LOGIN</h1>
+      <h2 id="text" class="td">To Start The Game You Need To Login :</h2>
 <div id="container">
     <div id="flex">
 <table>
     <tr> 
-        <td>username:</td>
+        <td class="td">username:</td>
        <td> <input id="usernameInput"></td>
         </tr>
     <tr>
-        <td>password:</td>
+        <td class="td">password:</td>
         <td> <input id="passwordInput"></td>
     </tr> 
 </table>
@@ -53,8 +52,6 @@
     <button id="buttonLogin">Login</button>
 </div>
 <div id="texttouser"></div>
-<!-- <img src="https://i.pinimg.com/736x/d2/ba/b8/d2bab8d03a34e0bb1adb7bee05cc9c94.jpg" alt="catPicToLogin" id="catpictoLogin"> -->
-
   <script type="module" src="login.js"></script>
 </body>
 

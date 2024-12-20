@@ -3,29 +3,32 @@
 
 <head>
   <title>Koshak Says</title>
-  <link rel="stylesheet" href="/website/styles/general.css">
-  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-  <div class="cpuntainer">
-
-    <h1>Koshak Says</h1>
-    <div class="koshak">
-      <button id="pravo1Button" class="panelButton"><img src="https://i.pinimg.com/736x/d2/ba/b8/d2bab8d03a34e0bb1adb7bee05cc9alt="></button>
-      <button id="levo2Button" class="panelButton">2</button>
-      <button id="levo3Button" class="panelButton">3</button>
-      <button id="pravo4Button" class="panelButton">4</button>
-      <img src="/website/images/light.webp" id="lightImg">
-    </div>
-
-      <div id="scoreDiv" style="font-size: 30px;">Score: 0</div>
-    </div>
-
+  <div class="container">
+  <h1>Koshak Says</h1>
+  <div id="scoreDiv" style="font-size: 30px;">Score: 0</div> 
+  <div id="bestDiv" style="font-size: 30px;">Best: 0</div>
+  <div class="Koshak">
+      <button id="pravo1Button" class="panelButton"></button> 
+      <button id="levo2Button" class="panelButton"></button>
+      <button id="levo3Button" class="panelButton"></button>
+      <button id="pravo4Button" class="panelButton"></button>
+       <img src="/website/images/light.webp" id="lightImg">
   </div>
+      <button id="startButton">Start </button>
+      
+      <div id="wrapperDiv">
+      
+      </div>
 
-  <script type="module" src="koshakSays.js"></script>
-  <a href="/website/pages/index.html">Go to the home</a>
+      <button id="leaderboard">Leaderboard</button>
+      <br>
+      <button id="home">Go to the home</button>
+      <script type="module" src="koshakSays.js"></script>
+    </div>
+      </div>
 </body>
 
 </html>
