@@ -58,14 +58,14 @@ class Program
           }
           else if (request.Path == "getUserName")
           {
-            string userId = request.GetBody<string>();
-            int i = 0;
-            while (users[i].id != userId)
-            {
-              i++;
-            }
-            string userName = users[i].userName;
-            response.Send(userName);
+          //   string userId = request.GetBody<string>();
+          //   int i = 0;
+          //   while (users[i].id != userId)
+          //   {
+          //     i++;
+          //   }
+          //   string userName = users[i].userName;
+          //   response.Send(userName);
           }
         }
         catch (Exception exception)

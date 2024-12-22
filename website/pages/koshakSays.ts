@@ -3,6 +3,9 @@ let bestDiv = document.querySelector("#bestDiv") as HTMLDivElement;
 let lightImg = document.querySelector("#lightImg") as HTMLImageElement;
 let startButton = document.querySelector("#startButton") as HTMLButtonElement;
 let panelButtons = document.querySelectorAll(".panelButton") as NodeListOf<HTMLButtonElement>;
+let welcomeDiv=document.querySelector("#welcomDiv")as HTMLDivElement;
+let nameInput = document.querySelector("#nameInput") as HTMLInputElement;
+import { send } from "../utilities";
 
 let panelHistory: number[] = [];
 let panelHistoryI = 0;
@@ -120,3 +123,10 @@ let handlePanelClick = async function (panelI: number) {
 }
 
 activatePanels(false);
+
+
+if(localStorage.getItem("userId")!= null){ 
+  let userName = await(send("getUserName",localStorage.getItem("userId")))as string;
+  
+    welcomeDiv.innerText="Welcome"+ userName +"!";
+} 
