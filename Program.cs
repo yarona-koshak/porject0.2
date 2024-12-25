@@ -56,8 +56,8 @@ class Program
             }
             response.Send(userId);
           }
-          else if (request.Path == "getUserName")
-          {
+          // else if (request.Path == "getUserName")
+          // {
           //   string userId = request.GetBody<string>();
           //   int i = 0;
           //   while (users[i].id != userId)
@@ -66,7 +66,7 @@ class Program
           //   }
           //   string userName = users[i].userName;
           //   response.Send(userName);
-          }
+          // }
         }
         catch (Exception exception)
         {
