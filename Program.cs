@@ -56,17 +56,18 @@ class Program
             }
             response.Send(userId);
           }
-          // else if (request.Path == "getUserName")
-          // {
-          //   string userId = request.GetBody<string>();
-          //   int i = 0;
-          //   while (users[i].id != userId)
-          //   {
-          //     i++;
-          //   }
-          //   string userName = users[i].userName;
-          //   response.Send(userName);
-          // }
+          else if (request.Path == "userExists")
+          {
+            bool userExists = false;
+
+            string userId = request.GetBody<string>();
+            for (int i=0; i<users.Length;i++){
+              if (users[i].id==userId){
+                userExists=true;
+              }
+            }
+            response.Send(userExists);
+        }
         }
         catch (Exception exception)
         {

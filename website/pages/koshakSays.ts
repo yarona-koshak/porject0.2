@@ -8,11 +8,13 @@ let usernameDiv = document.querySelector("#welcomeDiv") as HTMLDivElement;
 // let nameInput = document.querySelector("#nameInput") as HTMLInputElement;
 import { send } from "../utilities";
 let userId = localStorage.getItem("userId");
-
+console.log(userId);
 let userExists = false;
 if (userId != null) {
   userExists = await send("userExists", userId) as boolean;
 }
+
+console.log(userExists);
 
 if (userExists) {
   userDiv.style.display = "block";
@@ -22,7 +24,7 @@ if (userExists) {
   usernameDiv.innerText = "Logged In as " + username;
 }
 else {
-  localStorage.removeItem("userId");
+  // localStorage.removeItem("userId");
  
 }
 // let panelHistory: number[] = [];
