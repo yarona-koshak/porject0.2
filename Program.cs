@@ -38,8 +38,8 @@ class Program
           {
             (string userName, string password) = request.GetBody<(string, string)>();
             string userId = Guid.NewGuid().ToString();
-            users = [.. users, new User(userName, password,userId)];
-            
+            users = [.. users, new User(userName, password, userId)];
+
             Console.WriteLine(userName + " ," + password);
             response.Send(userId);
           }
@@ -61,13 +61,26 @@ class Program
             bool userExists = false;
 
             string userId = request.GetBody<string>();
-            for (int i=0; i<users.Length;i++){
-              if (users[i].id==userId){
-                userExists=true;
+            for (int i = 0; i < users.Length; i++)
+            {
+              if (users[i].id == userId)
+              {
+                userExists = true;
               }
             }
             response.Send(userExists);
-        }
+          }
+          else if (request.Path == "getUsername")
+          {
+            string userId = request.GetBody<string>();
+            for (int i = 0; i < users.Length; i++)
+            {
+              if (users[i].id == userId)
+              {
+                response.Send(users[i].userName);
+              }
+            }
+          }
         }
         catch (Exception exception)
         {

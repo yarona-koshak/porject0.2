@@ -17,7 +17,7 @@ if (userId != null) {
 console.log(userExists);
 
 if (userExists) {
-  userDiv.style.display = "block";
+  usernameDiv.style.display = "block";
 
 
   let username = await send("getUsername", userId)
