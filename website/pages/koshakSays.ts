@@ -1,5 +1,5 @@
 let gotohome=document.getElementById("home") as HTMLButtonElement;
-let userDiv = document.querySelector("#userDiv") as HTMLDivElement;
+
 let usernameDiv = document.querySelector("#welcomeDiv") as HTMLDivElement;
 // let lightImg = document.querySelector("#lightImg") as HTMLImageElement;
  //let startButton = document.querySelector("#startButton") as HTMLButtonElement;
