@@ -8,5 +8,5 @@ signupbutton.onclick = async function () {
     let userId = await send("signUp", [userNameInput.value, passwordInput.value]) as string;
     console.log(userId);
     alert("now you can play koshak says");
-    window.location.href = "/website/pages/index.html";
+    window.location.href = "/website/pages/login.html";
 }
