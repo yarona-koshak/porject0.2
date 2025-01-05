@@ -40,6 +40,7 @@ start.onclick = function() {
   startRound();
 }
 
+
 let updateScore = function(newScore: number) {
   score = newScore;
   scoreDiv.innerText = "Score: " + newScore;
