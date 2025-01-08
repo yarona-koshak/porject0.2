@@ -1,4 +1,4 @@
-let gotohome=document.getElementById("#home") as HTMLButtonElement;
+let gotohome=document.getElementById("home") as HTMLButtonElement;
 let usernameDiv = document.querySelector("#welcomeDiv") as HTMLDivElement;
 let start=document.querySelector("#startButton") as HTMLButtonElement;
 let scoreDiv = document.querySelector("#scoreDiv") as HTMLDivElement;
@@ -101,11 +101,11 @@ let wait = async function (ms: number) {
 
 for (let i = 0; i < panelButtons.length; i++) {
   panelButtons[i].onclick = function() {
-    handlePanelClick(i);
+    userclick(i);
   }
 }
 
-let handlePanelClick = async function (panelI: number) {
+let userclick = async function (panelI: number) {
   activate(false);
 
   if (panelI == panelHistory[panelHistoryI]) {
@@ -134,10 +134,10 @@ let handlePanelClick = async function (panelI: number) {
     }
     start.disabled = false;
 
-    alert("addRecord"+[usernameDiv.innerText,score]);
+    alert("addRecord "+[usernameDiv.innerText, score]);
 
     activate(false);
   }
 }
 
-activate(false);
+activate(false); 
