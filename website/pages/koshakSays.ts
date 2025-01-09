@@ -1,9 +1,10 @@
-let gotohome=document.getElementById("home") as HTMLButtonElement;
+let gotohome = document.getElementById("home") as HTMLButtonElement;
 let usernameDiv = document.querySelector("#welcomeDiv") as HTMLDivElement;
-let start=document.querySelector("#startButton") as HTMLButtonElement;
+let start = document.querySelector("#startButton") as HTMLButtonElement;
 let scoreDiv = document.querySelector("#scoreDiv") as HTMLDivElement;
 let lightImg = document.querySelector("#lightImg") as HTMLImageElement;
-let panelButtons= document.querySelectorAll(".panelButton") as NodeListOf<HTMLButtonElement>;
+let panelButtons = document.querySelectorAll(".panelButton") as NodeListOf<HTMLButtonElement>;
+let logout = document.getElementById("logoutbutton") as HTMLButtonElement;
 
 import { send } from "../utilities";
 let userId = localStorage.getItem("userId");
@@ -24,9 +25,9 @@ if (userExists) {
 }
 
 
-gotohome.onclick=function(){
+gotohome.onclick = function () {
   alert("you go to home page")
-  window.location.href ="/website/pages/index.html";
+  window.location.href = "/website/pages/index.html";
 }
 
 let panelHistory: number[] = [];
@@ -34,19 +35,19 @@ let panelHistoryI = 0;
 let score = 0;
 
 
-start.onclick = function() {
+start.onclick = function () {
   updateScore(0);
   start.disabled = true;
   startRound();
 }
 
 
-let updateScore = function(newScore: number) {
+let updateScore = function (newScore: number) {
   score = newScore;
   scoreDiv.innerText = "Score: " + newScore;
 }
 
-let startRound = async function() {
+let startRound = async function () {
   activate(false);
 
   let panelI = Math.floor(Math.random() * 4);
@@ -63,13 +64,13 @@ let startRound = async function() {
   activate(true);
 }
 
-let activate= function(activate: boolean) {
+let activate = function (activate: boolean) {
   for (let i = 0; i < panelButtons.length; i++) {
     panelButtons[i].disabled = !activate;
   }
 }
 
-let flash = async function(panelI: number, ms: number) {
+let flash = async function (panelI: number, ms: number) {
   lightImg.style.display = "block";
 
   if (panelI == 0) {
@@ -100,7 +101,7 @@ let wait = async function (ms: number) {
 
 
 for (let i = 0; i < panelButtons.length; i++) {
-  panelButtons[i].onclick = function() {
+  panelButtons[i].onclick = function () {
     userclick(i);
   }
 }
@@ -134,10 +135,16 @@ let userclick = async function (panelI: number) {
     }
     start.disabled = false;
 
-    alert("addRecord "+[usernameDiv.innerText, score]);
+    alert("addRecord " + [usernameDiv.innerText, score]);
 
     activate(false);
   }
 }
 
-activate(false); 
+activate(false);
+
+
+logout.onclick = function () {
+  localStorage.removeItem("userId");
+  alert("you had logout.תראננן  the page");
+}

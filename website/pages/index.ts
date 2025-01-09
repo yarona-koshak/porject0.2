@@ -1,5 +1,6 @@
 let toSignUpPage = document.getElementById("signupbutton") as HTMLButtonElement;
 let toLoginPage = document.getElementById("loginbutton")as HTMLButtonElement;
+
 let play= document.getElementById("play")as HTMLButtonElement;
 
 toLoginPage.onclick = function () {
