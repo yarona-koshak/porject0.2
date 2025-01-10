@@ -74,20 +74,20 @@ let flash = async function (panelI: number, ms: number) {
   fishImg.style.display = "block";
 
   if (panelI == 0) {
-    fishImg.style.left = "30%";
-    fishImg.style.top = "30%";
+    fishImg.style.left = "0%";
+    fishImg.style.top = "0%";
   }
   else if (panelI == 1) {
-    fishImg.style.left = "70%";
-    fishImg.style.top = "30%";
+    fishImg.style.left = "310%";
+    fishImg.style.top = "0%";
   }
   else if (panelI == 2) {
-    fishImg.style.left = "30%";
-    fishImg.style.top = "70%";
+    fishImg.style.left = "0%";
+    fishImg.style.top = "310%";
   }
   else if (panelI == 3) {
-    fishImg.style.left = "70%";
-    fishImg.style.top = "70%";
+    fishImg.style.left = "310%";
+    fishImg.style.top = "310%";
   }
 
   await wait(ms);

@@ -10,13 +10,11 @@
         
       }
       .container{
-            height: 500px;
-            align-items: center;
-            display: flex;
-            justify-content: center ; 
-            display: flex;
-            flex-direction: column;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
         #welcomeDiv{
           font-size: 40px;
         }
@@ -26,6 +24,31 @@
         .panelButton {
           border: solid black;
         }
+   
+.Koshak {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 10px;
+  position: relative;
+}
+
+#fishImg {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  display: none;
+}
+
+  .Koshak button {
+  padding: 0; 
+  border: none; 
+  margin: 0;
+  display: block;
+}
+
+.Koshak img {
+  display: block;
+}
  </style>
 </head>
 
