@@ -2,7 +2,7 @@ let gotohome = document.getElementById("home") as HTMLButtonElement;
 let usernameDiv = document.querySelector("#welcomeDiv") as HTMLDivElement;
 let start = document.querySelector("#startButton") as HTMLButtonElement;
 let scoreDiv = document.querySelector("#scoreDiv") as HTMLDivElement;
-let lightImg = document.querySelector("#lightImg") as HTMLImageElement;
+let fishImg = document.querySelector("#fishImg") as HTMLImageElement;
 let panelButtons = document.querySelectorAll(".panelButton") as NodeListOf<HTMLButtonElement>;
 let logout = document.getElementById("logoutbutton") as HTMLButtonElement;
 
@@ -71,28 +71,28 @@ let activate = function (activate: boolean) {
 }
 
 let flash = async function (panelI: number, ms: number) {
-  lightImg.style.display = "block";
+  fishImg.style.display = "block";
 
   if (panelI == 0) {
-    lightImg.style.left = "30%";
-    lightImg.style.top = "30%";
+    fishImg.style.left = "30%";
+    fishImg.style.top = "30%";
   }
   else if (panelI == 1) {
-    lightImg.style.left = "70%";
-    lightImg.style.top = "30%";
+    fishImg.style.left = "70%";
+    fishImg.style.top = "30%";
   }
   else if (panelI == 2) {
-    lightImg.style.left = "30%";
-    lightImg.style.top = "70%";
+    fishImg.style.left = "30%";
+    fishImg.style.top = "70%";
   }
   else if (panelI == 3) {
-    lightImg.style.left = "70%";
-    lightImg.style.top = "70%";
+    fishImg.style.left = "70%";
+    fishImg.style.top = "70%";
   }
 
   await wait(ms);
 
-  lightImg.style.display = "none";
+  fishImg.style.display = "none";
 }
 
 let wait = async function (ms: number) {
@@ -136,6 +136,7 @@ let userclick = async function (panelI: number) {
     start.disabled = false;
 
     alert("addRecord " + [usernameDiv.innerText, score]);
+    location.href = "fail.html";
 
     activate(false);
   }
@@ -146,5 +147,6 @@ activate(false);
 
 logout.onclick = function () {
   localStorage.removeItem("userId");
-  alert("you had logout.תראננן  the page");
+  alert("you did logout");
+  location.href = "koshakSays.html";
 }
