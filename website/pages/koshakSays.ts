@@ -74,20 +74,20 @@ let flash = async function (panelI: number, ms: number) {
   fishImg.style.display = "block";
 
   if (panelI == 0) {
-    fishImg.style.left = "0%";
-    fishImg.style.top = "0%";
+    fishImg.style.left = "0px";
+    fishImg.style.top = "0px";
   }
   else if (panelI == 1) {
-    fishImg.style.left = "310%";
-    fishImg.style.top = "0%";
+    fishImg.style.left = "210px";
+    fishImg.style.top = "0px";
   }
   else if (panelI == 2) {
-    fishImg.style.left = "0%";
-    fishImg.style.top = "310%";
+    fishImg.style.left = "0px";
+    fishImg.style.top = "210px";
   }
   else if (panelI == 3) {
-    fishImg.style.left = "310%";
-    fishImg.style.top = "310%";
+    fishImg.style.left = "210px";
+    fishImg.style.top = "210px";
   }
 
   await wait(ms);
@@ -135,7 +135,7 @@ let userclick = async function (panelI: number) {
     }
     start.disabled = false;
 
-    alert("addRecord " + [usernameDiv.innerText, score]);
+    alert(usernameDiv.innerText +"your score is "+ score);
     location.href = "fail.html";
 
     activate(false);
