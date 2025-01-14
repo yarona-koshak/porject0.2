@@ -82,12 +82,12 @@ let flash = async function (panelI: number, ms: number) {
     fishImg.style.top = "0px";
   }
   else if (panelI == 2) {
-    fishImg.style.left = "0px";
-    fishImg.style.top = "310px";
+    fishImg.style.left = "610px";
+    fishImg.style.top = "0px";
   }
   else if (panelI == 3) {
-    fishImg.style.left = "310px";
-    fishImg.style.top = "310px";
+    fishImg.style.left = "910px";
+    fishImg.style.top = "0px";
   }
 
   await wait(ms);
