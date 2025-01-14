@@ -78,15 +78,15 @@ let flash = async function (panelI: number, ms: number) {
     fishImg.style.top = "0px";
   }
   else if (panelI == 1) {
-    fishImg.style.left = "310px";
+    fishImg.style.left = "330px";
     fishImg.style.top = "0px";
   }
   else if (panelI == 2) {
-    fishImg.style.left = "610px";
+    fishImg.style.left = "630px";
     fishImg.style.top = "0px";
   }
   else if (panelI == 3) {
-    fishImg.style.left = "910px";
+    fishImg.style.left = "930px";
     fishImg.style.top = "0px";
   }
 
@@ -135,7 +135,7 @@ let userclick = async function (panelI: number) {
     }
     start.disabled = false;
 
-    alert(usernameDiv.innerText +"your score is "+ score);
+    alert(usernameDiv.innerText +" your score is "+ score);
     location.href = "fail.html";
 
     activate(false);
